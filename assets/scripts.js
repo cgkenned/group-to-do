@@ -17,7 +17,7 @@ function addToDo(input) {
   let span = document.createElement('span');
   li.appendChild(span);
 
-  li.addEventListener('click', removeLi);
+  span.addEventListener('click', removeLi);
 
   span.innerText = input;
   ul.appendChild(li);
@@ -27,15 +27,17 @@ const completedArray = [];
 
 function removeLi(e) {
   completedArray.push(e.target.innerText);
-  e.currentTarget.style.textDecoration = 'line-through';
+  e.path[0].style.textDecoration = 'line-through';
+  e.path[1].append(' Completed Task');
+  e.path[1].children[0].checked = true;
   setTimeout(() => {
     e.target.remove();
-  }, 1000);
+  }, 3000);
 
   let li = document.createElement('li');
-  for(i = 0; i < completedArray.length; i++) {
-      li.innerText = completedArray[i];
-      done.appendChild(li);
+  for (i = 0; i < completedArray.length; i++) {
+    li.innerText = completedArray[i];
+    done.appendChild(li);
   }
 }
 

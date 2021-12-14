@@ -18,20 +18,28 @@ function addToDo(input) {
   li.appendChild(span);
 
   span.addEventListener('click', removeLi);
+  checkbox.addEventListener('click', removeLi);
 
   span.innerText = input;
   ul.appendChild(li);
 }
 
-const completedArray = [];
+let completedArray = [];
 
 function removeLi(e) {
-  completedArray.push(e.target.innerText);
-  e.path[0].style.textDecoration = 'line-through';
-  e.path[1].append(' Completed Task');
-  e.path[1].children[0].checked = true;
+  let target = e.currentTarget;
+  while (target.tagName !== 'LI') {
+    target = target.parentNode;
+  }
+  let currentLi = target;
+  let span = currentLi.querySelector('span');
+  completedArray.push(span.innerText);
+  span.style.textDecoration = 'line-through';
+  currentLi.append(' Completed Task');
+  currentLi.querySelector('.checkbox').checked = true;
+
   setTimeout(() => {
-    e.target.remove();
+    span.remove();
   }, 3000);
 
   let li = document.createElement('li');

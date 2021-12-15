@@ -43,12 +43,14 @@ function removeLi(e) {
   }, 3000);
 
   let li = document.createElement('li');
+  let spanNew = document.createElement('span');
   for (i = 0; i < completedArray.length; i++) {
-    let span = document.createElement('span');
-    li.appendChild(span);
-    span.innerText = completedArray[i];
+    li.appendChild(spanNew);
+    spanNew.innerText = completedArray[i];
     done.appendChild(li);
   }
+
+  console.log('\nArray or Removed Items: ',completedArray );
 }
 
 btn.addEventListener('click', function () {

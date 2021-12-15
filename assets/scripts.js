@@ -44,7 +44,9 @@ function removeLi(e) {
 
   let li = document.createElement('li');
   for (i = 0; i < completedArray.length; i++) {
-    li.innerText = completedArray[i];
+    let span = document.createElement('span');
+    li.appendChild(span);
+    span.innerText = completedArray[i];
     done.appendChild(li);
   }
 }

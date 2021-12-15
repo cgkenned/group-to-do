@@ -1,3 +1,125 @@
-li {
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Space+Mono&display=swap');
+
+ul {
+  /*
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  */
+  width: 100%;
+  overflow: auto;
+  margin-top: 0;
+  padding-left: 30px;
+  list-style-position: inside;
+}
+
+#to-do-list {
   list-style-type: none;
+}
+
+li {
+  white-space: nowrap;
+  margin: 0 1px;
+  font-family: 'Corinthia', cursive;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+li::marker {
+  margin-right: 0;
+}
+
+body {
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('https://images.unsplash.com/photo-1437419764061-2473afe69fc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+#column1, #column2 {
+  border-right: 1px solid;
+  width: 25vw;
+}
+
+
+.fullList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 50vw;
+  background-color: rgb(231, 228, 228);
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Corinthia', cursive;
+  font-weight: 700;
+  font-size: 40px;
+  border-bottom: medium solid;
+  margin-bottom: 10px;
+}
+
+#completed-list {
+  list-style-type: disc;
+}
+
+#completed-list li span {
+  margin-left: -0.5em;
+}
+
+.submitNew {
+  display: inline;
+  box-sizing: border-box;
+  height: 20%;
+  width: 80%;
+  padding: 5px;
+}
+
+.addItem {
+  margin-left: 2px;
+  height: 30px;
+  width: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.addItem:active {
+  transform: scale(0.95);
+}
+
+#inputBox {
+  height: 30px;
+  width: 150px;
+  border-radius: 5px;
+}
+
+footer {
+  color: rgb(199, 189, 189);
+  border: 2px solid;
+  text-align: center;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 10px;
 }

@@ -8,22 +8,30 @@
     <title>To Do Group Project</title>
   </head>
   <body>
-    <div>
+  <div class="fullList">
+    <div id="column1">
       <h1>To Do List</h1>
       <ul id="to-do-list"></ul>
-      <input type="text" placeholder="Enter a new item" id="inputBox" /><button
-        class="addItem"
-        type="submit"
-      >
-        Add
-      </button>
+      <div class="submitNew">
+        <input type="text" placeholder="Enter a new item" id="inputBox" />
+        <button
+          class="addItem"
+          type="submit"
+        >
+          Add
+        </button>
+    </div>
     </div>
 
-    <div>
+    <div id="column2">
       <h1>Completed</h1>
       <ul id="completed-list"></ul>
     </div>
-
-    <script src="/assets/scripts.js"></script>
+  </div>
+  <footer>
+    Created by Ryan Moses, Lucy Hu & CG Kennedy.
+  </footer>
+  
+  <script src="/assets/scripts.js"></script>
   </body>
 </html>

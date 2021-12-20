@@ -26,6 +26,12 @@ function addToDo(input) {
 
 let completedArray = [];
 
+function removeChildren(parent) {
+  while(parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 function removeLi(e) {
   let target = e.currentTarget;
   while (target.tagName !== 'LI') {
@@ -42,9 +48,11 @@ function removeLi(e) {
     span.remove();
   }, 3000);
 
-  let li = document.createElement('li');
-  let spanNew = document.createElement('span');
+  removeChildren(done);
+
   for (i = 0; i < completedArray.length; i++) {
+    let li = document.createElement('li');
+    let spanNew = document.createElement('span');
     li.appendChild(spanNew);
     spanNew.innerText = completedArray[i];
     done.appendChild(li);
